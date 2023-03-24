@@ -195,7 +195,7 @@ def GSC_CCTA(img_rows, img_cols, num_PC, nb_classes):
 
     #
     F2 = SecondOrderPooling(name='feature1')(F)
-    F2 = Reshape((270, 270))(F2)  #按光谱长修改
+    F2 = Reshape((270, 270))(F2)  #
 
 
     #
