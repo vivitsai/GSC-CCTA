@@ -23,13 +23,13 @@ class GraphConv(Layer):
                  kernel_constraint=None,
                  bias_constraint=None,
                  **kwargs):
-        # 检测后台是不是基于tensorflow
+        # 
         if K.backend() != 'tensorflow':
             raise Exception("GraphConv with Tensorflow Backend.")
         if 'input_shape' not in kwargs and 'input_dim' in kwargs:
             kwargs['input_shape'] = (kwargs.pop('input_dim'),)
         super(GraphConv, self).__init__(**kwargs)
-        # 传回参数
+        # 
         self.filters = filters
         self.num_neighbors = num_neighbors
         self.neighbors_ix_mat = neighbors_ix_mat
